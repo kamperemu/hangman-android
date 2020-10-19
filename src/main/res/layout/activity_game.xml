@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".game">
+
+    <TextView
+        android:id="@+id/guessUI"
+        android:layout_width="368dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="52dp"
+        android:text="i hate my life"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="GUESS THE WORD"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guessUI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Tries: hate it!!!"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+
+    <Button
+        android:id="@+id/letterA"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="A"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+
+    <Button
+        android:id="@+id/letterB"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="B"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterA"
+        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+
+    <Button
+        android:id="@+id/letterC"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="C"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterB"
+        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+
+    <Button
+        android:id="@+id/letterD"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="D"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterC"
+        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+
+    <Button
+        android:id="@+id/letterE"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="E"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterD"
+        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+
+    <Button
+        android:id="@+id/letterF"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="F"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/letterA" />
+
+    <Button
+        android:id="@+id/letterG"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="G"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterF"
+        app:layout_constraintTop_toBottomOf="@+id/letterA" />
+
+    <Button
+        android:id="@+id/letterH"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="H"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterG"
+        app:layout_constraintTop_toBottomOf="@+id/letterA" />
+
+    <Button
+        android:id="@+id/letterI"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="I"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterH"
+        app:layout_constraintTop_toBottomOf="@+id/letterA" />
+
+    <Button
+        android:id="@+id/letterJ"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="J"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterI"
+        app:layout_constraintTop_toBottomOf="@+id/letterA" />
+
+    <Button
+        android:id="@+id/letterK"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="K"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/letterF" />
+
+    <Button
+        android:id="@+id/letterL"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="L"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterK"
+        app:layout_constraintTop_toBottomOf="@+id/letterF" />
+
+    <Button
+        android:id="@+id/letterM"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="M"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterL"
+        app:layout_constraintTop_toBottomOf="@+id/letterF" />
+
+    <Button
+        android:id="@+id/letterN"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="N"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterM"
+        app:layout_constraintTop_toBottomOf="@+id/letterF" />
+
+    <Button
+        android:id="@+id/letterO"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="O"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterN"
+        app:layout_constraintTop_toBottomOf="@+id/letterF" />
+
+    <Button
+        android:id="@+id/letterP"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="P"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/letterK" />
+
+    <Button
+        android:id="@+id/letterQ"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="Q"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterP"
+        app:layout_constraintTop_toBottomOf="@+id/letterK" />
+
+    <Button
+        android:id="@+id/letterR"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="R"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterQ"
+        app:layout_constraintTop_toBottomOf="@+id/letterK" />
+
+    <Button
+        android:id="@+id/letterS"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="S"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterR"
+        app:layout_constraintTop_toBottomOf="@+id/letterK" />
+
+    <Button
+        android:id="@+id/letterT"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="T"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterS"
+        app:layout_constraintTop_toBottomOf="@+id/letterK" />
+
+    <Button
+        android:id="@+id/letterU"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="11dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="U"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/letterQ"
+        app:layout_constraintTop_toBottomOf="@+id/letterQ" />
+
+    <Button
+        android:id="@+id/letterV"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="11dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="V"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterU"
+        app:layout_constraintTop_toBottomOf="@+id/letterP" />
+
+    <Button
+        android:id="@+id/letterW"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="W"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterV"
+        app:layout_constraintTop_toBottomOf="@+id/letterP" />
+
+    <Button
+        android:id="@+id/letterX"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="11dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="X"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/letterU"
+        app:layout_constraintTop_toBottomOf="@+id/letterU" />
+
+    <Button
+        android:id="@+id/letterY"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="11dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="Y"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterX"
+        app:layout_constraintTop_toBottomOf="@+id/letterU" />
+
+    <Button
+        android:id="@+id/letterZ"
+        android:layout_width="69dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="11dp"
+        android:background="#4CAF50"
+        android:onClick="sendGuess"
+        android:text="Z"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#803434"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/letterY"
+        app:layout_constraintTop_toBottomOf="@+id/letterU" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
