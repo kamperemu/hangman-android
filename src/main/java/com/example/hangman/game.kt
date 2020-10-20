@@ -3,6 +3,7 @@ package com.example.hangman
 
 import android.content.Intent
 import android.media.MediaPlayer
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -35,6 +36,7 @@ class game : AppCompatActivity() {
             word = getWord.text.toString()
             setContentView(R.layout.activity_game)
             guess()
+            // hide systemUI because when keyboard comes the system UI pops up
             hideSystemUI()
         }
     }
@@ -113,7 +115,7 @@ class game : AppCompatActivity() {
         guess()
     }
 
-
+    // when anything is clicked in win or lose page it goes back to home page
     fun home(view: View){
         val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
@@ -123,19 +125,24 @@ class game : AppCompatActivity() {
 
 
 
-
+    // hide systemUI as long as window has focus
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) hideSystemUI()
     }
 
+    // hides status bar and navigation bar
     private fun hideSystemUI() {
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
-                or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_FULLSCREEN)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.setDecorFitsSystemWindows(false)
+        } else {
+            window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
+                    or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_FULLSCREEN)
+        }
     }
 }
 

@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // hide systemUI at beginning of creation
         hideSystemUI()
 
         MobileAds.initialize(this@MainActivity)
@@ -30,12 +31,14 @@ class MainActivity : AppCompatActivity() {
         mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
         mInterstitialAd.loadAd(AdRequest.Builder().build())
 
+        // opens game activity if play button is clicked
         val playButton = findViewById<Button>(R.id.play_button)
         playButton.setOnClickListener {
             val intent = Intent(this, game::class.java)
             startActivity(intent)
             mInterstitialAd.show()
         }
+        // opens credit activity if credits button is clicked
         val creditButton = findViewById<Button>(R.id.credit_button)
         creditButton.setOnClickListener {
             val intent = Intent(this, Credits::class.java)
@@ -50,11 +53,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    // hide systemUI as long as window has focus
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) hideSystemUI()
     }
 
+    // hides status bar and navigation bar
     private fun hideSystemUI() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.setDecorFitsSystemWindows(false)

@@ -12,6 +12,10 @@ class Credits : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_credits)
 
+        // hide systemUI
+        hideSystemUI()
+
+        // goes back to main activity if back button is clicked
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -19,11 +23,13 @@ class Credits : AppCompatActivity() {
         }
     }
 
+    // hide systemUI as long as window has focus
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) hideSystemUI()
     }
 
+    // hides status bar and navigation bar
     private fun hideSystemUI() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.setDecorFitsSystemWindows(false)
