@@ -90,10 +90,13 @@ class game : AppCompatActivity() {
 
     // changes the guessUI and tries textView to update the guesses
     private fun guess(){
+
         var guessUI = ""
         word = word.toUpperCase()
+
         // the following code finds the letters that have already been guessed
         for (i in word.toList()){
+
             // if the letter in the word is in guessed then letterActivation is true
             var letterActivation = false
             for (j in guessed){
@@ -101,20 +104,23 @@ class game : AppCompatActivity() {
                     letterActivation = true
                 }
             }
+
             // if the letter is in the word then it will add letter to the guessUI or else it will add a "_ "
             if (letterActivation){
                 guessUI += i
             }else{
                 guessUI += "_ "
             }
-
         }
+
         // if the oldGuessUI is same as the new one it means the new letter that has been guessed is wrong so noGuesses gets incremented
         if (oldGuessUI == guessUI){
             noGuesses++
         }
+
         // old guessUI is updated to new guessUI for later use
         oldGuessUI = guessUI
+
         // the text of the text view is updated
         findViewById<TextView>(R.id.guessUI).text = guessUI
         val tries = "Tries: $noGuesses"
