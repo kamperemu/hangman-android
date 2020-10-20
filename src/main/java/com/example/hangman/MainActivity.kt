@@ -1,6 +1,7 @@
 package com.example.hangman
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -55,6 +56,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
+    // common functions - i have copied and pasted cause i don't know another way to do this right now
+
+
     // hide systemUI as long as window has focus
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
@@ -75,8 +81,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // flip animation on changing
     override fun finish(){
         super.finish()
         overridePendingTransition(R.anim.grow_from_middle,R.anim.shrink_to_middle);
+        var player = MediaPlayer.create(this,R.raw.transition)
+        player.start()
     }
 }

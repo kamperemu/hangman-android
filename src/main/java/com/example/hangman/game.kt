@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_lose.*
 
 class game : AppCompatActivity() {
 
@@ -119,10 +118,16 @@ class game : AppCompatActivity() {
     fun home(view: View){
         val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
 
 
+
+
+
+
+    // common functions - i have copied and pasted cause i don't know another way to do this right now
 
 
     // hide systemUI as long as window has focus
@@ -143,6 +148,14 @@ class game : AppCompatActivity() {
                     or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                     or View.SYSTEM_UI_FLAG_FULLSCREEN)
         }
+    }
+
+    // flip animation on changing
+    override fun finish(){
+        super.finish()
+        overridePendingTransition(R.anim.grow_from_middle,R.anim.shrink_to_middle);
+        var player = MediaPlayer.create(this,R.raw.transition)
+        player.start()
     }
 }
 
