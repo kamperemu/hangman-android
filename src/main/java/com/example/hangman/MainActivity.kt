@@ -73,4 +73,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun finish(){
+        super.finish()
+        overridePendingTransition(R.anim.grow_from_middle,R.anim.shrink_to_middle);
+    }
 }
