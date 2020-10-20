@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:background="#58CD83"
+        android:soundEffectsEnabled="false"
         android:text="go back"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

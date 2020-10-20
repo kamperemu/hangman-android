@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:onClick="home"
+    android:soundEffectsEnabled="false"
     tools:context=".game">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:onClick="home"
+        android:soundEffectsEnabled="false"
         android:text="I HATE MY LIFE"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/mssg"
@@ -26,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="home"
+        android:soundEffectsEnabled="false"
         android:text="LOSE"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="home"
+        android:soundEffectsEnabled="false"
         android:text="Click Anywhere to Continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

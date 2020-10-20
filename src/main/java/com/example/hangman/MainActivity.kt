@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, game::class.java)
             startActivity(intent)
             mInterstitialAd.show()
+            finish()
         }
         // opens credit activity if credits button is clicked
         val creditButton = findViewById<Button>(R.id.credit_button)
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Credits::class.java)
             startActivity(intent)
             mInterstitialAd.show()
+            finish()
         }
 
     }
