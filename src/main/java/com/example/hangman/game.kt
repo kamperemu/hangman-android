@@ -5,6 +5,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -44,13 +45,19 @@ class game : AppCompatActivity() {
 
     // sends guess on letter being clicked
     fun sendGuess(view: View) {
+
         // get the letter as a button object
         val letter:Button = view as Button
+
+
         // if the letter is already used then it will not change the guessUI
         if (letter !in letterList) {
             val oldGuessNo = noGuesses
             letterList.add(letter)
             guess(letter.text as String)
+
+
+            // visual and audio confirmation of whether letter is correct or wrong
             if (noGuesses == oldGuessNo){
                 letter.setBackgroundColor(0xFF0000FF.toInt())
                 var player = MediaPlayer.create(this,R.raw.wrong)
@@ -60,6 +67,22 @@ class game : AppCompatActivity() {
                 var player = MediaPlayer.create(this,R.raw.correct)
                 player.start()
             }
+
+            // win or lose after 1 sec
+            val handler = Handler()
+            handler.postDelayed({
+                var wordReveal = "The word was $word"
+                if (noGuesses==6) {
+                    setContentView(R.layout.activity_lose)
+                    findViewById<TextView>(R.id.wordReveal).text = wordReveal
+                }else if (oldGuessUI == word){
+                    setContentView(R.layout.activity_win)
+                    findViewById<TextView>(R.id.wordReveal).text = wordReveal
+                }
+            }, 1000)
+
+
+
         }
     }
 
@@ -90,21 +113,12 @@ class game : AppCompatActivity() {
         if (oldGuessUI == guessUI){
             noGuesses++
         }
+        // old guessUI is updated to new guessUI for later use
         oldGuessUI = guessUI
-        // win or lose
-        var wordReveal = "The word was $word"
-        if (noGuesses==6) {
-            setContentView(R.layout.activity_lose)
-            findViewById<TextView>(R.id.wordReveal).text = wordReveal
-        }else if (guessUI == word){
-            setContentView(R.layout.activity_win)
-            findViewById<TextView>(R.id.wordReveal).text = wordReveal
-        }else{
-            // the text of the text view is updated
-            findViewById<TextView>(R.id.guessUI).text = guessUI
-            val tries = "Tries: $noGuesses"
-            findViewById<TextView>(R.id.tries).text = tries
-        }
+        // the text of the text view is updated
+        findViewById<TextView>(R.id.guessUI).text = guessUI
+        val tries = "Tries: $noGuesses"
+        findViewById<TextView>(R.id.tries).text = tries
     }
 
 
