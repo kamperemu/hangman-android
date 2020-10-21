@@ -20,6 +20,7 @@ class game : AppCompatActivity() {
     var word = ""
 
     // variables for guessing
+    private var validLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKMNOPQRSTUVWXYZ ".toList()
     private var guessed = mutableListOf(' ')
     private var oldGuessUI=""
     private var letterList:MutableList<Any> = mutableListOf(" ",1)
@@ -29,19 +30,44 @@ class game : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_getword)
 
-        val button = findViewById<Button>(R.id.submit_word)
-        val getWord = findViewById<EditText>(R.id.getword)
-        // when the word is submitted it gets stored and the layout is changed and the guessUI changes according to the word guessed
-        button.setOnClickListener {
-            word = getWord.text.toString()
-            setContentView(R.layout.activity_game)
-            guess()
-            // hide systemUI because when keyboard comes the system UI pops up
-            hideSystemUI()
-        }
+        // hide systemUI
+        hideSystemUI()
+
     }
 
 
+
+    fun checkWord(view: View) {
+        // gets word
+        val getWord = findViewById<EditText>(R.id.getword)
+        word = getWord.text.toString()
+
+        // checks whether word is valid or not
+        var isValid = true
+        var invalidText = "invalid word"
+        if (word==""){
+            isValid = false
+            invalidText = "need to enter word"
+        }
+        for (i in word.toList()){
+            if (i !in validLetters){
+                isValid = false
+                invalidText = "your word must have English letters"
+            }
+        }
+
+
+        // actions are taken upon whether or not the word is valid
+        if (isValid){
+            // change view to actual game
+            setContentView(R.layout.activity_game)
+            guess()
+        }else{
+            // invalid error text is shown to user
+            findViewById<TextView>(R.id.invalid).text =  invalidText
+        }
+        hideSystemUI()
+    }
 
     // sends guess on letter being clicked
     fun sendGuess(view: View) {
@@ -75,9 +101,13 @@ class game : AppCompatActivity() {
                 if (noGuesses==6) {
                     setContentView(R.layout.activity_lose)
                     findViewById<TextView>(R.id.wordReveal).text = wordReveal
+                    var player = MediaPlayer.create(this,R.raw.lose)
+                    player.start()
                 }else if (oldGuessUI == word){
                     setContentView(R.layout.activity_win)
                     findViewById<TextView>(R.id.wordReveal).text = wordReveal
+                    var player = MediaPlayer.create(this,R.raw.win)
+                    player.start()
                 }
             }, 1000)
 
