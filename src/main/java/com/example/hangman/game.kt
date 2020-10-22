@@ -9,6 +9,7 @@ import android.os.Handler
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -19,6 +20,7 @@ class game : AppCompatActivity() {
     private var noGuesses = 0
     var word = ""
     private lateinit var bgmusic: MediaPlayer
+    private var hangman = listOf(R.drawable.hangman1,R.drawable.hangman2,R.drawable.hangman3,R.drawable.hangman4,R.drawable.hangman5,R.drawable.hangman6,R.drawable.hangman7)
 
     // variables for guessing
     private var validLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKMNOPQRSTUVWXYZ ".toList()
@@ -154,6 +156,7 @@ class game : AppCompatActivity() {
         // if the oldGuessUI is same as the new one it means the new letter that has been guessed is wrong so noGuesses gets incremented
         if (oldGuessUI == guessUI){
             noGuesses++
+            findViewById<ImageView>(R.id.hangman).setImageResource(hangman[noGuesses])
         }
 
         // old guessUI is updated to new guessUI for later use

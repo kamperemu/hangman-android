@@ -9,12 +9,12 @@
 
     <TextView
         android:id="@+id/guessUI"
-        android:layout_width="318dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="i hate my life"
         android:textAlignment="center"
-        android:textSize="48sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:text="GUESS THE WORD"
-        android:textSize="24sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/guessUI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -41,12 +41,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guessUI" />
 
+    <ImageView
+        android:id="@+id/hangman"
+        android:layout_width="83dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tries"
+        app:srcCompat="@drawable/hangman1" />
+
     <Button
         android:id="@+id/letterA"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
         android:soundEffectsEnabled="false"
@@ -56,14 +65,13 @@
         android:textColorHint="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+        app:layout_constraintTop_toBottomOf="@+id/hangman" />
 
     <Button
         android:id="@+id/letterB"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
         android:soundEffectsEnabled="false"
@@ -73,14 +81,13 @@
         android:textColorHint="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/letterA"
-        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+        app:layout_constraintTop_toBottomOf="@+id/hangman" />
 
     <Button
         android:id="@+id/letterC"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
         android:soundEffectsEnabled="false"
@@ -90,14 +97,13 @@
         android:textColorHint="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/letterB"
-        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+        app:layout_constraintTop_toBottomOf="@+id/hangman" />
 
     <Button
         android:id="@+id/letterD"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
         android:soundEffectsEnabled="false"
@@ -107,14 +113,13 @@
         android:textColorHint="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/letterC"
-        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+        app:layout_constraintTop_toBottomOf="@+id/hangman" />
 
     <Button
         android:id="@+id/letterE"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
         android:soundEffectsEnabled="false"
@@ -124,13 +129,13 @@
         android:textColorHint="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/letterD"
-        app:layout_constraintTop_toBottomOf="@+id/guessUI" />
+        app:layout_constraintTop_toBottomOf="@+id/hangman" />
 
     <Button
         android:id="@+id/letterF"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="15dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
@@ -145,8 +150,8 @@
 
     <Button
         android:id="@+id/letterG"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -162,8 +167,8 @@
 
     <Button
         android:id="@+id/letterH"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -179,8 +184,8 @@
 
     <Button
         android:id="@+id/letterI"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -196,8 +201,8 @@
 
     <Button
         android:id="@+id/letterJ"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -213,9 +218,9 @@
 
     <Button
         android:id="@+id/letterK"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="15dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
@@ -230,8 +235,8 @@
 
     <Button
         android:id="@+id/letterL"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -247,8 +252,8 @@
 
     <Button
         android:id="@+id/letterM"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -264,8 +269,8 @@
 
     <Button
         android:id="@+id/letterN"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -281,8 +286,8 @@
 
     <Button
         android:id="@+id/letterO"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -298,9 +303,9 @@
 
     <Button
         android:id="@+id/letterP"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="15dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
@@ -315,8 +320,8 @@
 
     <Button
         android:id="@+id/letterQ"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -332,8 +337,8 @@
 
     <Button
         android:id="@+id/letterR"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -349,8 +354,8 @@
 
     <Button
         android:id="@+id/letterS"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -366,8 +371,8 @@
 
     <Button
         android:id="@+id/letterT"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -383,8 +388,8 @@
 
     <Button
         android:id="@+id/letterU"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginTop="11dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
@@ -399,8 +404,8 @@
 
     <Button
         android:id="@+id/letterV"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="11dp"
         android:background="#4CAF50"
@@ -416,8 +421,8 @@
 
     <Button
         android:id="@+id/letterW"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
@@ -433,8 +438,8 @@
 
     <Button
         android:id="@+id/letterX"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginTop="11dp"
         android:background="#4CAF50"
         android:onClick="sendGuess"
@@ -449,8 +454,8 @@
 
     <Button
         android:id="@+id/letterY"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="11dp"
         android:background="#4CAF50"
@@ -466,8 +471,8 @@
 
     <Button
         android:id="@+id/letterZ"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="11dp"
         android:background="#4CAF50"
