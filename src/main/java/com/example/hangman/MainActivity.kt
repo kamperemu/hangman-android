@@ -1,20 +1,23 @@
 package com.example.hangman
 
+
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mInterstitialAd: InterstitialAd
+    private lateinit var bgmusic: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +25,11 @@ class MainActivity : AppCompatActivity() {
 
         // hide systemUI at beginning of creation
         hideSystemUI()
+
+        // background music
+        bgmusic = MediaPlayer.create(this, R.raw.bgmusic)
+        bgmusic.isLooping=true
+        bgmusic.start()
 
         MobileAds.initialize(this@MainActivity)
 
@@ -55,9 +63,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
-
     // common functions - i have copied and pasted cause i don't know another way to do this right now
 
 
@@ -84,8 +89,20 @@ class MainActivity : AppCompatActivity() {
     // flip animation on changing
     override fun finish(){
         super.finish()
-        overridePendingTransition(R.anim.grow_from_middle,R.anim.shrink_to_middle);
-        var player = MediaPlayer.create(this,R.raw.transition)
+        overridePendingTransition(R.anim.grow_from_middle, R.anim.shrink_to_middle);
+        var player = MediaPlayer.create(this, R.raw.transition)
         player.start()
     }
+
+    // background music starts and stops as the app is exited or opened again
+    override fun onRestart() {
+        super.onRestart()
+        bgmusic.start()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        bgmusic.pause()
+    }
+
 }

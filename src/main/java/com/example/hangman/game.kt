@@ -18,6 +18,7 @@ class game : AppCompatActivity() {
     // Main variables
     private var noGuesses = 0
     var word = ""
+    private lateinit var bgmusic: MediaPlayer
 
     // variables for guessing
     private var validLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKMNOPQRSTUVWXYZ ".toList()
@@ -26,12 +27,19 @@ class game : AppCompatActivity() {
     private var letterList:MutableList<Any> = mutableListOf(" ",1)
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_getword)
 
         // hide systemUI
         hideSystemUI()
+
+        // background music
+        bgmusic = MediaPlayer.create(this, R.raw.bgmusic)
+        bgmusic.isLooping=true
+        bgmusic.start()
+
 
     }
 
@@ -206,6 +214,16 @@ class game : AppCompatActivity() {
         overridePendingTransition(R.anim.grow_from_middle,R.anim.shrink_to_middle);
         var player = MediaPlayer.create(this,R.raw.transition)
         player.start()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        bgmusic.start()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        bgmusic.pause()
     }
 }
 

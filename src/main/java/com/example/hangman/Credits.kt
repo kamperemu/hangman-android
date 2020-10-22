@@ -9,12 +9,20 @@ import android.view.View
 import android.widget.Button
 
 class Credits : AppCompatActivity() {
+
+    private lateinit var bgmusic: MediaPlayer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_credits)
 
         // hide systemUI
         hideSystemUI()
+
+        // background music
+        bgmusic = MediaPlayer.create(this, R.raw.bgmusic)
+        bgmusic.isLooping=true
+        bgmusic.start()
 
         // goes back to main activity if back button is clicked
         val button = findViewById<Button>(R.id.button)
@@ -23,6 +31,8 @@ class Credits : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+
     }
 
 
@@ -63,4 +73,5 @@ class Credits : AppCompatActivity() {
         var player = MediaPlayer.create(this,R.raw.transition)
         player.start()
     }
+
 }
