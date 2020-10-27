@@ -17,7 +17,6 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3487244055371056~7716149435" />
 
-        <activity android:name=".Instructions" />
         <activity
             android:name=".game"
             android:screenOrientation="portrait" />
