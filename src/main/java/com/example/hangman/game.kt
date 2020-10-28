@@ -19,7 +19,6 @@ class game : AppCompatActivity() {
     // Main variables
     private var noGuesses = 0
     var word = ""
-    private lateinit var bgmusic: MediaPlayer
     private var hangman = listOf(R.drawable.hangman1,R.drawable.hangman2,R.drawable.hangman3,R.drawable.hangman4,R.drawable.hangman5,R.drawable.hangman6,R.drawable.hangman7)
 
     // variables for guessing
@@ -37,10 +36,6 @@ class game : AppCompatActivity() {
         // hide systemUI
         hideSystemUI()
 
-        // background music
-        bgmusic = MediaPlayer.create(this, R.raw.bgmusic)
-        bgmusic.isLooping=true
-        bgmusic.start()
 
 
     }
@@ -119,7 +114,7 @@ class game : AppCompatActivity() {
                     var player = MediaPlayer.create(this,R.raw.win)
                     player.start()
                 }
-            }, 1000)
+            }, 2000)
 
 
 
@@ -217,16 +212,6 @@ class game : AppCompatActivity() {
         overridePendingTransition(R.anim.grow_from_middle,R.anim.shrink_to_middle);
         var player = MediaPlayer.create(this,R.raw.transition)
         player.start()
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        bgmusic.start()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        bgmusic.pause()
     }
 }
 

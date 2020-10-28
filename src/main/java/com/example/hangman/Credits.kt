@@ -19,10 +19,6 @@ class Credits : AppCompatActivity() {
         // hide systemUI
         hideSystemUI()
 
-        // background music
-        bgmusic = MediaPlayer.create(this, R.raw.bgmusic)
-        bgmusic.isLooping=true
-        bgmusic.start()
 
         // goes back to main activity if back button is clicked
         val button = findViewById<Button>(R.id.button)

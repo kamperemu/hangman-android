@@ -14,6 +14,7 @@ import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mInterstitialAd: InterstitialAd
