@@ -3,9 +3,9 @@ package com.example.hangman
 
 import android.content.Intent
 import android.media.MediaPlayer
+import android.media.MediaPlayer.OnCompletionListener
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -19,13 +19,21 @@ class game : AppCompatActivity() {
     // Main variables
     private var noGuesses = 0
     var word = ""
-    private var hangman = listOf(R.drawable.hangman1,R.drawable.hangman2,R.drawable.hangman3,R.drawable.hangman4,R.drawable.hangman5,R.drawable.hangman6,R.drawable.hangman7)
+    private var hangman = listOf(
+        R.drawable.hangman1,
+        R.drawable.hangman2,
+        R.drawable.hangman3,
+        R.drawable.hangman4,
+        R.drawable.hangman5,
+        R.drawable.hangman6,
+        R.drawable.hangman7
+    )
 
     // variables for guessing
     private var validLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKMNOPQRSTUVWXYZ ".toList()
     private var guessed = mutableListOf(' ')
     private var oldGuessUI=""
-    private var letterList:MutableList<Any> = mutableListOf(" ",1)
+    private var letterList:MutableList<Any> = mutableListOf(" ", 1)
 
 
 
@@ -87,35 +95,40 @@ class game : AppCompatActivity() {
             letterList.add(letter)
             guess(letter.text as String)
 
-
+            lateinit var player: MediaPlayer
             // visual and audio confirmation of whether letter is correct or wrong
             if (noGuesses == oldGuessNo){
                 letter.setBackgroundColor(0xFF0000FF.toInt())
-                var player = MediaPlayer.create(this,R.raw.correct)
+                player = MediaPlayer.create(this, R.raw.correct)
                 player.start()
             }else{
                 letter.setBackgroundColor(0xFFFF0000.toInt())
-                var player = MediaPlayer.create(this,R.raw.wrong)
+                player = MediaPlayer.create(this, R.raw.wrong)
                 player.start()
             }
 
-            // win or lose after 1 sec
-            val handler = Handler()
-            handler.postDelayed({
-                var wordReveal = "The word was $word"
 
-                if (noGuesses==6) {
-                    setContentView(R.layout.activity_lose)
-                    findViewById<TextView>(R.id.wordReveal).text = wordReveal
-                    var player = MediaPlayer.create(this,R.raw.lose)
-                    player.start()
-                }else if (oldGuessUI == word){
-                    setContentView(R.layout.activity_win)
-                    findViewById<TextView>(R.id.wordReveal).text = wordReveal
-                    var player = MediaPlayer.create(this,R.raw.win)
-                    player.start()
-                }
-            }, 2000)
+
+
+
+            // visual and audio results of winning or losing
+            var wordReveal = "The word was $word"
+
+            if (noGuesses == 6) {
+                setContentView(R.layout.activity_lose)
+                findViewById<TextView>(R.id.wordReveal).text = wordReveal
+                var player = MediaPlayer.create(this, R.raw.lose)
+                player.start()
+            } else if (oldGuessUI == word) {
+                setContentView(R.layout.activity_win)
+                findViewById<TextView>(R.id.wordReveal).text = wordReveal
+                var player = MediaPlayer.create(this, R.raw.win)
+                player.start()
+            }
+            player.setOnCompletionListener { mp ->
+                mp.reset()
+                mp.release()
+            }
         }
     }
 
@@ -163,14 +176,14 @@ class game : AppCompatActivity() {
 
 
     // adds letter to guess
-    private fun guess(letter:String){
+    private fun guess(letter: String){
         guessed.addAll(letter.toList())
         guess()
     }
 
     // when anything is clicked in win or lose page it goes back to home page
     fun home(view: View){
-        val intent = Intent(this,MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
     }
@@ -207,9 +220,13 @@ class game : AppCompatActivity() {
     // flip animation on changing
     override fun finish(){
         super.finish()
-        overridePendingTransition(R.anim.grow_from_middle,R.anim.shrink_to_middle);
-        var player = MediaPlayer.create(this,R.raw.transition)
+        overridePendingTransition(R.anim.grow_from_middle, R.anim.shrink_to_middle);
+        var player = MediaPlayer.create(this, R.raw.transition)
         player.start()
+        player.setOnCompletionListener { mp ->
+            mp.reset()
+            mp.release()
+        }
     }
 }
 

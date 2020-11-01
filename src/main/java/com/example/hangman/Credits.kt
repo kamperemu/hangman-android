@@ -68,6 +68,10 @@ class Credits : AppCompatActivity() {
         overridePendingTransition(R.anim.grow_from_middle,R.anim.shrink_to_middle);
         var player = MediaPlayer.create(this,R.raw.transition)
         player.start()
+        player.setOnCompletionListener { mp ->
+            mp.reset()
+            mp.release()
+        }
     }
 
 }
