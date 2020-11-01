@@ -57,7 +57,6 @@ class MainActivity : AppCompatActivity() {
         creditButton.setOnClickListener {
             val intent = Intent(this, Credits::class.java)
             startActivity(intent)
-            mInterstitialAd.show()
             finish()
         }
 
