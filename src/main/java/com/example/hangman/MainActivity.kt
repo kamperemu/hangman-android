@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
+import hotchemi.android.rate.AppRate
 import kotlinx.android.synthetic.main.activity_main.*
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         // hide systemUI at beginning of creation
         hideSystemUI()
 
+        // rating
+        AppRate.with(this).setRemindInterval(2).monitor()
+        AppRate.showRateDialogIfMeetsConditions(this)
         // background music
         bgmusic = MediaPlayer.create(this, R.raw.bgmusic)
         bgmusic.isLooping=true
