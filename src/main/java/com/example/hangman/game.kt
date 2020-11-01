@@ -67,7 +67,10 @@ class game : AppCompatActivity() {
                 invalidText = "your word must have English letters"
             }
         }
-
+        if (word.length > 16){
+            isValid = false
+            invalidText = "word should be less than 16 letters long"
+        }
 
         // actions are taken upon whether or not the word is valid
         if (isValid){
