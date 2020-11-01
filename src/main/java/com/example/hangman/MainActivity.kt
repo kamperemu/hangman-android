@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mInterstitialAd: InterstitialAd
-    private lateinit var bgmusic: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +26,6 @@ class MainActivity : AppCompatActivity() {
         // hide systemUI at beginning of creation
         hideSystemUI()
 
-        // background music
-        bgmusic = MediaPlayer.create(this, R.raw.bgmusic)
-        bgmusic.isLooping=true
-        bgmusic.start()
 
         MobileAds.initialize(this@MainActivity)
 
@@ -95,15 +90,5 @@ class MainActivity : AppCompatActivity() {
         player.start()
     }
 
-    // background music starts and stops as the app is exited or opened again
-    override fun onRestart() {
-        super.onRestart()
-        bgmusic.start()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        bgmusic.pause()
-    }
 
 }
