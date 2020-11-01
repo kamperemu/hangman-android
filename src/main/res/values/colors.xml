@@ -3,4 +3,6 @@
     <color name="textColor">#7C4526</color>
     <color name="btnTextColor">#F9C9A9</color>
     <color name="btnColor">#A58B7D</color>
+    <color name="btnCorrectColor">#784F37</color>
+    <color name="btnWrongColor">#CF6120</color>
 </resources>

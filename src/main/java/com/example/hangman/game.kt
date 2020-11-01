@@ -97,11 +97,11 @@ class game : AppCompatActivity() {
             lateinit var player: MediaPlayer
             // visual and audio confirmation of whether letter is correct or wrong
             if (noGuesses == oldGuessNo){
-                letter.setBackgroundColor(0xFF0000FF.toInt())
+                letter.setBackgroundResource(R.drawable.button_correct)
                 player = MediaPlayer.create(this, R.raw.correct)
                 player.start()
             }else{
-                letter.setBackgroundColor(0xFFFF0000.toInt())
+                letter.setBackgroundResource(R.drawable.button_wrong)
                 player = MediaPlayer.create(this, R.raw.wrong)
                 player.start()
             }

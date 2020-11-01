@@ -6,10 +6,11 @@
     <string name="title_get_word">CHOOSE A WORD</string>
     <string name="submit">SUBMIT</string>
     <string name="enter">Enter Word</string>
-    <string name="error">error: not supposed to see this</string>
+    <string name="error">error: u cant see me</string>
     <string name="lose">LOSE</string>
     <string name="win">WIN</string>
     <string name="click">Click Anywhere to Continue</string>
+    <string name="title_game">GUESS THE WORD</string>
 
 
     <string name="rate_dialog_title">Do You Like It?</string>
