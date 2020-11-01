@@ -103,6 +103,7 @@ class game : AppCompatActivity() {
             val handler = Handler()
             handler.postDelayed({
                 var wordReveal = "The word was $word"
+
                 if (noGuesses==6) {
                     setContentView(R.layout.activity_lose)
                     findViewById<TextView>(R.id.wordReveal).text = wordReveal
@@ -115,9 +116,6 @@ class game : AppCompatActivity() {
                     player.start()
                 }
             }, 2000)
-
-
-
         }
     }
 
