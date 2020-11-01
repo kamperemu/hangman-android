@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         hideSystemUI()
 
         // rating
-        AppRate.with(this).setRemindInterval(2).monitor()
+        AppRate.with(this).setInstallDays(0).setLaunchTimes(4).setRemindInterval(2).monitor()
         AppRate.showRateDialogIfMeetsConditions(this)
         // background music
         bgmusic = MediaPlayer.create(this, R.raw.bgmusic)

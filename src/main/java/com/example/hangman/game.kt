@@ -169,7 +169,7 @@ class game : AppCompatActivity() {
 
         // the text of the text view is updated
         findViewById<TextView>(R.id.guessUI).text = guessUI
-        val tries = "Tries: $noGuesses"
+        val tries = "Tries: $noGuesses/6"
         findViewById<TextView>(R.id.tries).text = tries
     }
 

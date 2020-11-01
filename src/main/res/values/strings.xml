@@ -10,4 +10,9 @@
     <string name="lose">LOSE</string>
     <string name="win">WIN</string>
     <string name="click">Click Anywhere to Continue</string>
+
+
+    <string name="rate_dialog_title">Do You Like It?</string>
+    <string name="rate_dialog_message">Please support us by rating our app. It will only take a moment to rate us. Thanks for your support.</string>
+    <string name="rate_dialog_ok">Show Some Love</string>
 </resources>
