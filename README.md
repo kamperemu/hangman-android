@@ -10,3 +10,8 @@ hangman revolution - my first android app
  many changes have been made to the GUI and AUI
 
 have uploaded assets folder
+
+app has been finished
+
+ads and no ads apk versions made
+
