@@ -13,9 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Credits"></activity>
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8534560869377566~7516106364" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
