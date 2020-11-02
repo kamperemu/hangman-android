@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         adView.loadAd(adRequest)
 
         mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.adUnitId = "ca-app-pub-8534560869377566/1711764278"
         mInterstitialAd.loadAd(AdRequest.Builder().build())
 
         // opens game activity if play button is clicked
