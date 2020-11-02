@@ -8,16 +8,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
-import com.google.android.gms.ads.MobileAds
 import hotchemi.android.rate.AppRate
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mInterstitialAd: InterstitialAd
     private lateinit var bgmusic: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,21 +30,12 @@ class MainActivity : AppCompatActivity() {
         bgmusic.isLooping=true
         bgmusic.start()
 
-        MobileAds.initialize(this@MainActivity)
-
-        val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
-
-        mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd.adUnitId = "ca-app-pub-8534560869377566/1711764278"
-        mInterstitialAd.loadAd(AdRequest.Builder().build())
 
         // opens game activity if play button is clicked
         val playButton = findViewById<Button>(R.id.play_button)
         playButton.setOnClickListener {
             val intent = Intent(this, game::class.java)
             startActivity(intent)
-            mInterstitialAd.show()
             finish()
         }
         // opens credit activity if credits button is clicked
