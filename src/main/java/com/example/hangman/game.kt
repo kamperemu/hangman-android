@@ -117,13 +117,15 @@ class game : AppCompatActivity() {
             var wordReveal = "The word was $word"
 
             if (noGuesses == 6) {
-                setContentView(R.layout.activity_lose)
+                setContentView(R.layout.activity_winorlose)
                 findViewById<TextView>(R.id.wordReveal).text = wordReveal
+                findViewById<TextView>(R.id.mssg).text = resources.getString(R.string.lose)
                 var player = MediaPlayer.create(this, R.raw.lose)
                 player.start()
             } else if (oldGuessUI == word) {
-                setContentView(R.layout.activity_win)
+                setContentView(R.layout.activity_winorlose)
                 findViewById<TextView>(R.id.wordReveal).text = wordReveal
+                findViewById<TextView>(R.id.mssg).text = resources.getString(R.string.win)
                 var player = MediaPlayer.create(this, R.raw.win)
                 player.start()
             }

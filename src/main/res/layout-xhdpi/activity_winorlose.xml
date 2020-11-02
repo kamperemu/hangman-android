@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/wordReveal"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/schoolbell"
         android:onClick="home"
         android:soundEffectsEnabled="false"
@@ -30,27 +30,25 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/wordReveal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="70dp"
         android:fontFamily="@font/schoolbell"
         android:onClick="home"
         android:soundEffectsEnabled="false"
         android:text="@string/click"
         android:textAlignment="center"
         android:textColor="@color/textColor"
-        android:textSize="36sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/wordReveal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
         android:fontFamily="@font/schoolbell"
         android:onClick="home"
         android:soundEffectsEnabled="false"
         android:text="@string/error"
         android:textAlignment="center"
         android:textColor="@color/textColor"
-        android:textSize="30sp" />
+        android:textSize="36sp" />
 </RelativeLayout>
