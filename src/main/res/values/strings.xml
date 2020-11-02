@@ -11,7 +11,10 @@
     <string name="win">WIN</string>
     <string name="click">Click Anywhere to Continue</string>
     <string name="title_game">GUESS THE WORD</string>
-
+    <string name="go_back">GO BACK</string>
+    <string name="Vedang">VEDANG --> PROGRAMMER</string>
+    <string name="Sarath">SARATH --> GRAPHICS DESIGNER</string>
+    <string name="bugs">We are aware of software bugs. The app is still in BETA.</string>
 
     <string name="rate_dialog_title">Do You Like It?</string>
     <string name="rate_dialog_message">Please support us by rating our app. It will only take a moment to rate us. Thanks for your support.</string>

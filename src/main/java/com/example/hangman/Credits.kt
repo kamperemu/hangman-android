@@ -2,6 +2,7 @@ package com.example.hangman
 
 import android.content.Intent
 import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -33,6 +34,10 @@ class Credits : AppCompatActivity() {
 
 
 
+    fun sendToGithub(view: View) {
+        val link = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/kamperemu/hangman-android"))
+        startActivity(link)
+    }
 
 
 
