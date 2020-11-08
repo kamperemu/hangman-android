@@ -15,3 +15,4 @@ app has been finished
 
 ads and no ads apk versions made
 
+tested and fixed bug
