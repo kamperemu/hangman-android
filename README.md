@@ -11,8 +11,4 @@ hangman revolution - my first android app
 
 have uploaded assets folder
 
-app has been finished
-
-ads and no ads apk versions made
-
-tested and fixed bug
+no ads version apk added to github... for main app with ads go to play store (will publish soon).
