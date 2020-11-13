@@ -9,4 +9,4 @@ many changes have been made to the GUI and AUI
 
 have uploaded assets folder
 
-no ads version apk added to github... for main app with ads go to play store (will publish soon).
+have abandoned project... for now (sizing things relative to screen size is difficult on android studio framework)
